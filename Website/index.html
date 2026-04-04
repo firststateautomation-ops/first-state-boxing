@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="First State Boxing — Camden, Delaware's premier boxing gym. All ages, all levels. Founded and coached by Coach Anthony.">
+<title>First State Boxing — Camden, Delaware</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #f8f8f8;
+    --gray: #888;
+    --light: #efefef;
+    --border: #e0e0e0;
+    --display: 'Bebas Neue', sans-serif;
+    --body: 'DM Sans', sans-serif;
+    --max: 1100px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    font-size: 12px; font-weight: 500; color: var(--black);
+    text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--gray); }
+  .nav-cta {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    padding: 9px 20px;
+    border-radius: 2px;
+    transition: opacity .2s !important;
+  }
+  .nav-cta:hover { opacity: 0.8 !important; }
+
+  /* HERO */
+  .hero {
+    padding-top: 60px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: var(--max);
+    margin: 0 auto;
+    align-items: center;
+    gap: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .hero-left { padding: 80px 0; }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gray);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(64px, 8vw, 110px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--black);
+    margin-bottom: 28px;
+  }
+  .hero-sub {
+    font-size: 16px; font-weight: 300; color: var(--gray);
+    max-width: 400px; line-height: 1.7; margin-bottom: 40px;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--black); color: var(--white);
+    padding: 14px 32px;
+    font-size: 12px; font-weight: 500; text-decoration: none;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    transition: opacity .2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { opacity: 0.8; }
+  .btn-secondary {
+    color: var(--black); font-size: 12px; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 2px;
+    transition: gap .2s;
+  }
+  .btn-secondary:hover { gap: 14px; }
+
+  /* Hero right - stats */
+  .hero-right { padding: 80px 0; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .stat-item {
+    background: var(--white);
+    padding: 32px 28px;
+  }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 52px; line-height: 1;
+    color: var(--black); margin-bottom: 6px;
+  }
+  .stat-label { font-size: 12px; color: var(--gray); letter-spacing: 0.04em; line-height: 1.5; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); max-width: var(--max); margin: 0 auto; }
+
+  /* SECTIONS */
+  section { padding: 100px 40px; }
+  .container { max-width: var(--max); margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 20px;
+  }
+  h2 {
+    font-family: var(--display);
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 0.95; letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 15px; color: var(--gray); max-width: 480px;
+    line-height: 1.7; margin-bottom: 60px;
+  }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-image {
+    background: var(--light);
+    height: 480px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .about-image-placeholder {
+    text-align: center; color: var(--gray); font-size: 13px;
+  }
+  .about-image-placeholder span { font-size: 48px; display: block; margin-bottom: 12px; opacity: 0.3; }
+  .bio-placeholder {
+    margin-top: 32px; padding: 24px;
+    border: 1px solid var(--border); background: var(--light);
+    font-size: 13px; color: var(--gray); line-height: 1.7;
+  }
+  .bio-placeholder strong { display: block; margin-bottom: 8px; color: var(--black); font-size: 14px; }
+
+  /* CLASSES */
+  .classes-section { background: var(--black); }
+  .classes-section h2 { color: var(--white); }
+  .classes-section .section-label { color: rgba(255,255,255,0.35); }
+  .classes-section .section-sub { color: rgba(255,255,255,0.45); }
+  .classes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
+  .class-card {
+    background: var(--black);
+    padding: 40px 32px;
+    transition: background .2s;
+  }
+  .class-card:hover { background: #111; }
+  .class-num {
+    font-family: var(--display); font-size: 48px;
+    color: rgba(255,255,255,0.08); line-height: 1;
+    margin-bottom: 20px; display: block;
+  }
+  .class-card h3 {
+    font-family: var(--display); font-size: 28px;
+    color: var(--white); margin-bottom: 12px; letter-spacing: 0.03em;
+  }
+  .class-card p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; }
+  .class-tag {
+    display: inline-block; margin-top: 20px;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 4px 10px;
+  }
+
+  /* SCHEDULE */
+  .schedule-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+  .schedule-table th {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gray);
+    padding: 12px 20px; text-align: left;
+    border-bottom: 2px solid var(--black);
+  }
+  .schedule-table td {
+    padding: 16px 20px; font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .schedule-table tr:hover td { background: var(--light); }
+  .schedule-badge {
+    display: inline-block;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; background: var(--black); color: var(--white);
+    padding: 3px 8px;
+  }
+  .placeholder-note {
+    background: #fffbeb; border: 1px solid #f59e0b;
+    padding: 12px 16px; font-size: 12px; color: #92400e;
+    margin-bottom: 20px; letter-spacing: 0.02em;
+  }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .price-card { background: var(--white); padding: 40px 32px; position: relative; }
+  .price-card.featured { background: var(--black); }
+  .price-badge {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    background: var(--black); color: var(--white);
+    font-size: 9px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 4px 14px;
+  }
+  .price-card.featured .price-badge { background: var(--white); color: var(--black); }
+  .price-tier {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 16px;
+  }
+  .price-card.featured .price-tier { color: rgba(255,255,255,0.4); }
+  .price-amount {
+    font-family: var(--display); font-size: 56px;
+    line-height: 1; margin-bottom: 4px;
+  }
+  .price-card.featured .price-amount { color: var(--white); }
+  .price-period { font-size: 12px; color: var(--gray); margin-bottom: 28px; }
+  .price-card.featured .price-period { color: rgba(255,255,255,0.4); }
+  .price-features { list-style: none; margin-bottom: 32px; }
+  .price-features li {
+    font-size: 13px; color: var(--gray);
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+    display: flex; gap: 10px;
+  }
+  .price-card.featured .price-features li { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.08); }
+  .price-features li::before { content: '—'; flex-shrink: 0; }
+  .price-cta {
+    display: block; width: 100%; padding: 13px;
+    text-align: center;
+    font-size: 11px; font-weight: 500; text-decoration: none;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    transition: opacity .2s;
+    border: 1px solid var(--black);
+    color: var(--black);
+  }
+  .price-cta:hover { opacity: 0.7; }
+  .price-card.featured .price-cta { background: var(--white); border-color: var(--white); color: var(--black); }
+
+  /* GALLERY */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin-top: 40px;
+  }
+  .gallery-item {
+    background: var(--light);
+    aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border);
+    overflow: hidden; position: relative;
+  }
+  .gallery-placeholder {
+    text-align: center; color: var(--gray); font-size: 11px;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .gallery-placeholder span { font-size: 24px; display: block; margin-bottom: 8px; opacity: 0.3; }
+
+  /* INSTAGRAM */
+  .instagram-section { background: var(--light); border-top: 1px solid var(--border); }
+  .instagram-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 40px;
+  }
+  .instagram-item {
+    background: var(--border); aspect-ratio: 1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; opacity: 0.4;
+  }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  .contact-info { display: flex; flex-direction: column; gap: 32px; }
+  .contact-item {}
+  .contact-item-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 8px;
+  }
+  .contact-item-value { font-size: 15px; line-height: 1.6; }
+  .contact-map {
+    background: var(--light); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 300px;
+  }
+  .map-placeholder { text-align: center; color: var(--gray); font-size: 13px; }
+  .map-placeholder span { font-size: 36px; display: block; margin-bottom: 8px; }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--black);
+    text-align: center;
+    padding: 120px 40px;
+  }
+  .cta-section h2 { color: var(--white); margin-bottom: 20px; }
+  .cta-section p { color: rgba(255,255,255,0.45); font-size: 16px; max-width: 480px; margin: 0 auto 40px; line-height: 1.7; }
+  .btn-primary-light {
+    background: var(--white); color: var(--black);
+    padding: 16px 40px;
+    font-size: 12px; font-weight: 500; text-decoration: none;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    display: inline-block; transition: opacity .2s;
+  }
+  .btn-primary-light:hover { opacity: 0.85; }
+
+  /* FOOTER */
+  footer {
+    padding: 40px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-inner {
+    max-width: var(--max); margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-logo { font-family: var(--display); font-size: 18px; letter-spacing: 0.04em; }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a { font-size: 12px; color: var(--gray); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--black); }
+  .footer-copy { font-size: 12px; color: var(--gray); }
+
+  /* FADE IN */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 40px 20px; min-height: auto; padding-top: 100px; }
+    .hero-right { padding-top: 0; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    section { padding: 64px 20px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .classes-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">First State Boxing</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#classes">Classes</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+    <a href="#signup" class="nav-cta">Sign Up</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Camden, Delaware · Est. 2020</div>
+    <h1>Train.<br>Grow.<br>Fight.</h1>
+    <p class="hero-sub">A community boxing gym built for all ages and all levels. Whether you want to compete, get fit, or find your confidence — this is your gym.</p>
+    <div class="hero-actions">
+      <a href="#signup" class="btn-primary">Start Training</a>
+      <a href="#classes" class="btn-secondary">See classes</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-num">All</div>
+        <div class="stat-label">Ages welcome — kids, teens, and adults</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:.1s">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Head coach & founder — Coach Anthony</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:.2s">
+        <div class="stat-num">5★</div>
+        <div class="stat-label">Rated on Google — family atmosphere</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:.3s">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Experience needed to get started</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image fade-up">
+        <img src="IMG_7924.jpeg" alt="Coach Anthony at a boxing event" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="fade-up" style="transition-delay:.15s">
+        <div class="section-label">About the gym</div>
+        <h2>Built by a boxer.<br>Built for everyone.</h2>
+        <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:24px">First State Boxing is a community gym in Camden, Delaware built for people who want to learn, compete, get fit, and grow. We welcome all ages and all skill levels — from 7-year-olds stepping into a gym for the first time to adults looking for a real challenge.</p>
+        <p style="font-size:15px;color:var(--gray);line-height:1.8;margin-bottom:32px">Every member is part of the family from day one. No judgment. No ego. Just hard work and real coaching.</p>
+        <div class="section-label" style="margin-bottom:12px">Coach Anthony — Founder & Head Coach</div>
+        <div class="bio-placeholder">
+          <strong>⚠ PLACEHOLDER — Add Coach Anthony's bio here before publishing.</strong>
+          This section will contain Coach Anthony's background, boxing experience, coaching philosophy, and personal story. Paste the bio text here once provided.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CLASSES -->
+<section id="classes" class="classes-section">
+  <div class="container">
+    <div class="section-label">What we offer</div>
+    <h2>Classes for every level.</h2>
+    <p class="section-sub">No experience required. Our coaches meet you where you are and take you where you want to go.</p>
+    <div class="classes-grid">
+      <div class="class-card fade-up">
+        <span class="class-num">01</span>
+        <h3>Kids Classes</h3>
+        <p>Boxing fundamentals, discipline, and confidence for kids and teens. A safe, structured environment where young athletes build character alongside their skills.</p>
+        <span class="class-tag">Ages 7+</span>
+      </div>
+      <div class="class-card fade-up" style="transition-delay:.1s">
+        <span class="class-num">02</span>
+        <h3>Adult Classes</h3>
+        <p>Technique, conditioning, and real boxing training for adults at every skill level. Whether you've never thrown a punch or you've been training for years — you belong here.</p>
+        <span class="class-tag">All levels</span>
+      </div>
+      <div class="class-card fade-up" style="transition-delay:.2s">
+        <span class="class-num">03</span>
+        <h3>1-on-1 Private Sessions</h3>
+        <p>Personalized one-on-one training with Coach Anthony. Built around your goals, your pace, and your timeline. The fastest way to improve.</p>
+        <span class="class-tag">By appointment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-label">Weekly schedule</div>
+    <h2>Find your time.</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Time</th>
+          <th>Class</th>
+          <th>Coach</th>
+          <th>Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tuesday</strong></td>
+          <td>5:00 PM</td>
+          <td>Kids Classes</td>
+          <td>Coach Anthony</td>
+          <td><span class="schedule-badge">Ages 5–13</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tuesday</strong></td>
+          <td>6:00 PM</td>
+          <td>Adult Classes</td>
+          <td>Coach Anthony</td>
+          <td><span class="schedule-badge">All Levels</span></td>
+        </tr>
+        <tr>
+          <td><strong>Thursday</strong></td>
+          <td>5:00 PM</td>
+          <td>Kids Classes</td>
+          <td>Coach Anthony</td>
+          <td><span class="schedule-badge">Ages 5–13</span></td>
+        </tr>
+        <tr>
+          <td><strong>Thursday</strong></td>
+          <td>6:00 PM</td>
+          <td>Adult Classes</td>
+          <td>Coach Anthony</td>
+          <td><span class="schedule-badge">All Levels</span></td>
+        </tr>
+        <tr>
+          <td><strong>By Appointment</strong></td>
+          <td>Flexible</td>
+          <td>1-on-1 Private Sessions</td>
+          <td>Coach Anthony</td>
+          <td><span class="schedule-badge">All Levels</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-label">Membership</div>
+    <h2>Straightforward pricing.</h2>
+    <div class="pricing-grid">
+      <div class="price-card fade-up">
+        <div class="price-tier">Kids Classes</div>
+        <div class="price-amount">$75</div>
+        <div class="price-period">per month</div>
+        <ul class="price-features">
+          <li>Ages 5–13</li>
+          <li>Boxing fundamentals</li>
+          <li>Discipline & confidence</li>
+          <li>Safe, structured environment</li>
+        </ul>
+        <a href="#signup" class="price-cta">Enroll your child</a>
+      </div>
+      <div class="price-card featured fade-up" style="transition-delay:.1s">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-tier">Adult Classes</div>
+        <div class="price-amount">$75</div>
+        <div class="price-period">per month</div>
+        <ul class="price-features">
+          <li>All skill levels welcome</li>
+          <li>Technique & conditioning</li>
+          <li>Real boxing training</li>
+          <li>Community atmosphere</li>
+        </ul>
+        <a href="#signup" class="price-cta">Start training</a>
+      </div>
+      <div class="price-card fade-up" style="transition-delay:.2s">
+        <div class="price-tier">1-on-1 Private Sessions</div>
+        <div class="price-amount">$TBD</div>
+        <div class="price-period">per session</div>
+        <ul class="price-features">
+          <li>With Coach Anthony</li>
+          <li>Fully personalized plan</li>
+          <li>Flexible scheduling</li>
+          <li>Fastest path to improvement</li>
+        </ul>
+        <a href="#signup" class="price-cta">Book a session</a>
+      </div>
+    </div>
+    <div style="margin-top:1px;border:1px solid var(--border);padding:28px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div>
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);margin-bottom:4px;">Drop-In Day Pass</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:var(--black);">$15</div>
+      </div>
+      <div style="font-size:13px;color:var(--gray);max-width:400px;line-height:1.7;">Not ready to commit? Drop in for any scheduled class and experience the gym firsthand. No membership required.</div>
+      <a href="#signup" style="display:inline-block;padding:13px 28px;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--black);color:var(--black);text-decoration:none;white-space:nowrap;">Get a Day Pass</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-label">The gym</div>
+    <h2>See it for yourself.</h2>
+    <p class="section-sub">A real boxing gym with real equipment and real coaches. Come see what we're about.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="image000000.jpeg" alt="Kids boxing class at First State Boxing" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gallery-item"><img src="image000001.jpeg" alt="Adult class group photo at First State Boxing" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gallery-item"><img src="IMG_7924.jpeg" alt="Coach Anthony with champion" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gallery-item"><img src="IMG_7925.jpeg" alt="First State Boxing champions with belts" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gallery-item"><img src="IMG_7926.jpeg" alt="First State Boxing gym community" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="gallery-item"><img src="image000000.jpeg" alt="Kids boxing class" style="width:100%;height:100%;object-fit:cover;display:block;object-position:top;"></div>
+      <div class="gallery-item"><img src="IMG_7925.jpeg" alt="Championship belts" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center;"></div>
+      <div class="gallery-item"><img src="image000001.jpeg" alt="First State Boxing community" style="width:100%;height:100%;object-fit:cover;display:block;object-position:top;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="instagram-section">
+  <div class="container">
+    <div class="section-label">Follow us</div>
+    <h2>@firststateboxing</h2>
+    <p class="section-sub">Follow us on Instagram for training clips, events, and gym updates.</p>
+    <div class="instagram-grid">
+      <div class="instagram-item">📸</div>
+      <div class="instagram-item">📸</div>
+      <div class="instagram-item">📸</div>
+      <div class="instagram-item">📸</div>
+      <div class="instagram-item">📸</div>
+      <div class="instagram-item">📸</div>
+    </div>
+    <div style="margin-top:28px;text-align:center">
+      <a href="https://www.instagram.com/firststateboxing/" target="_blank" class="btn-primary">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Find us</div>
+    <h2>Come train with us.</h2>
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <div class="contact-item">
+          <div class="contact-item-label">Address</div>
+          <div class="contact-item-value">23 Cochran Land<br>Building 3, Suite 5 & 6<br>Camden, DE 19934</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label">Phone</div>
+          <div class="contact-item-value"><a href="tel:3029438508" style="color:var(--black);">(302) 943-8508</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label">Hours</div>
+          <div class="contact-item-value">Open during scheduled classes<br>and private sessions only</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label">Instagram</div>
+          <div class="contact-item-value"><a href="https://www.instagram.com/firststateboxing/" target="_blank" style="color:var(--black)">@firststateboxing</a></div>
+        </div>
+      </div>
+      <div class="contact-map fade-up" style="transition-delay:.15s">
+        <div class="map-placeholder">
+          <span>📍</span>
+          <strong style="display:block;font-size:15px;color:var(--black);margin-bottom:4px">Camden, Delaware</strong>
+          <span style="font-size:12px">23 Cochran Land, Building 3</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN UP CTA -->
+<section id="signup" class="cta-section">
+  <div class="container">
+    <div class="section-label" style="color:rgba(255,255,255,0.3);justify-content:center">Get started</div>
+    <h2>Your first class is on us.</h2>
+    <p>Come in, meet Coach Anthony, and see if First State Boxing is the right fit. No commitment, no pressure — just boxing.</p>
+    <a href="mailto:placeholder@firststateboxing.com" class="btn-primary-light">Book a Free Class</a>
+    <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,0.25)">Or find us at 23 Cochran Land, Camden DE</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">First State Boxing</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-copy">
+      © 2026 First State Boxing. Camden, Delaware.<br>
+      <span style="font-size:11px;color:#bbb;">Website powered by <a href="https://firststateautomation.ai" target="_blank" style="color:#bbb;text-decoration:underline;">First State Automation</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
