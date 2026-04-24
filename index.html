@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="First State Boxing — Camden, Delaware's premier boxing gym. All ages, all levels. Founded and coached by Coach Anthony.">
 <title>First State Boxing — Camden, Delaware</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -49,6 +51,14 @@
     letter-spacing: 0.05em;
     color: var(--black);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
   }
   .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a {
@@ -380,14 +390,14 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">First State Boxing</a>
+  <a href="#" class="nav-logo"><img src="logo.png" alt="First State Boxing logo"><span>First State Boxing</span></a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#classes">Classes</a>
     <a href="#schedule">Schedule</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
-    <a href="#signup" class="nav-cta">Sign Up</a>
+    <a href="https://app.glofox.com/portal/#/branch/65fb5c00dc4d5c59920134a6/classes-week-view" target="_blank" rel="noopener" class="nav-cta">Sign Up</a>
   </div>
 </nav>
 
@@ -398,7 +408,7 @@
     <h1>Train.<br>Grow.<br>Fight.</h1>
     <p class="hero-sub">A community boxing gym built for all ages and all levels. Whether you want to compete, get fit, or find your confidence — this is your gym.</p>
     <div class="hero-actions">
-      <a href="#signup" class="btn-primary">Start Training</a>
+      <a href="https://app.glofox.com/portal/#/branch/65fb5c00dc4d5c59920134a6/classes-week-view" target="_blank" rel="noopener" class="btn-primary">Start Training</a>
       <a href="#classes" class="btn-secondary">See classes</a>
     </div>
   </div>
@@ -546,7 +556,7 @@
           <li>Discipline & confidence</li>
           <li>Safe, structured environment</li>
         </ul>
-        <a href="#signup" class="price-cta">Enroll your child</a>
+        <a href="https://app.glofox.com/portal/#/branch/65fb5c00dc4d5c59920134a6/classes-week-view" target="_blank" rel="noopener" class="price-cta">Enroll your child</a>
       </div>
       <div class="price-card featured fade-up" style="transition-delay:.1s">
         <div class="price-badge">Most Popular</div>
@@ -559,7 +569,7 @@
           <li>Real boxing training</li>
           <li>Community atmosphere</li>
         </ul>
-        <a href="#signup" class="price-cta">Start training</a>
+        <a href="https://app.glofox.com/portal/#/branch/65fb5c00dc4d5c59920134a6/classes-week-view" target="_blank" rel="noopener" class="price-cta">Start training</a>
       </div>
       <div class="price-card fade-up" style="transition-delay:.2s">
         <div class="price-tier">1-on-1 Private Sessions</div>
@@ -571,7 +581,7 @@
           <li>Flexible scheduling</li>
           <li>Fastest path to improvement</li>
         </ul>
-        <a href="#signup" class="price-cta">Book a session</a>
+        <a href="https://app.glofox.com/portal/#/branch/65fb5c00dc4d5c59920134a6/classes-week-view" target="_blank" rel="noopener" class="price-cta">Book a session</a>
       </div>
     </div>
     <div style="margin-top:1px;border:1px solid var(--border);padding:28px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
@@ -580,7 +590,7 @@
         <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:var(--black);">$15</div>
       </div>
       <div style="font-size:13px;color:var(--gray);max-width:400px;line-height:1.7;">Not ready to commit? Drop in for any scheduled class and experience the gym firsthand. No membership required.</div>
-      <a href="#signup" style="display:inline-block;padding:13px 28px;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--black);color:var(--black);text-decoration:none;white-space:nowrap;">Get a Day Pass</a>
+      <a href="https://app.glofox.com/portal/#/branch/65fb5c00dc4d5c59920134a6/classes-week-view" target="_blank" rel="noopener" style="display:inline-block;padding:13px 28px;font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--black);color:var(--black);text-decoration:none;white-space:nowrap;">Get a Day Pass</a>
     </div>
   </div>
 </section>
@@ -612,16 +622,8 @@
     <div class="section-label">Follow us</div>
     <h2>@firststateboxing</h2>
     <p class="section-sub">Follow us on Instagram for training clips, events, and gym updates.</p>
-    <div class="instagram-grid">
-      <div class="instagram-item">📸</div>
-      <div class="instagram-item">📸</div>
-      <div class="instagram-item">📸</div>
-      <div class="instagram-item">📸</div>
-      <div class="instagram-item">📸</div>
-      <div class="instagram-item">📸</div>
-    </div>
-    <div style="margin-top:28px;text-align:center">
-      <a href="https://www.instagram.com/firststateboxing/" target="_blank" class="btn-primary">Follow on Instagram</a>
+    <div style="margin-top:40px;text-align:center">
+      <a href="https://www.instagram.com/firststateboxing/" target="_blank" rel="noopener" class="btn-primary">View on Instagram</a>
     </div>
   </div>
 </section>
@@ -672,7 +674,7 @@
     <div class="section-label" style="color:rgba(255,255,255,0.3);justify-content:center">Get started</div>
     <h2>Your first class is on us.</h2>
     <p>Come in, meet Coach Anthony, and see if First State Boxing is the right fit. No commitment, no pressure — just boxing.</p>
-    <a href="mailto:placeholder@firststateboxing.com" class="btn-primary-light">Book a Free Class</a>
+    <a href="https://app.glofox.com/portal/#/branch/65fb5c00dc4d5c59920134a6/classes-week-view" target="_blank" rel="noopener" class="btn-primary-light">Book a Free Class</a>
     <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,0.25)">Or find us at 23 Cochran Land, Camden DE</p>
   </div>
 </section>
